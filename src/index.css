@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', 'Inter', Arial, sans-serif;
+  background: linear-gradient(135deg, #fff6f0 0%, #ffe0b2 100%);
+  min-height: 100vh;
+  color: #222;
+  letter-spacing: 0.01em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Poppins', 'Inter', Arial, sans-serif;
+  font-weight: 700;
+  margin: 0 0 0.5em 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding: 1rem 0.5rem;
+  }
+}

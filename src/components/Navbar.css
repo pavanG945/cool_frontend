@@ -1,0 +1,239 @@
+.navbar-header {
+  font-family: 'Poppins', Arial, sans-serif;
+  background: linear-gradient(90deg, #ff7043 0%, #ffa07a 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2.5rem 1.2rem 2rem;
+  box-shadow: 0 2px 12px rgba(255,112,67,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Logo Styles */
+.logo-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.logo-container:hover {
+  transform: scale(1.05);
+}
+
+.logo-image {
+  height: 50px;
+  width: auto;
+  filter: drop-shadow(0 2px 8px rgba(255,112,67,0.2));
+}
+
+/* Legacy logo class for backward compatibility */
+.logo {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px rgba(255,112,67,0.13);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Search Bar Styles */
+.search-container {
+  flex: 1;
+  max-width: 400px;
+  margin: 0 1rem;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 25px;
+  padding: 0.3rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.search-form:focus-within {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  background: transparent;
+  color: #333;
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+.search-btn {
+  background: #ff7043;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background 0.3s ease;
+}
+
+.search-btn:hover {
+  background: #e55a2b;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-links li a {
+  color: #ff7043;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.15rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+  border: 2px solid #fff;
+  background: #fff;
+  transition: background 0.18s, color 0.18s, border 0.18s;
+  min-width: 120px;
+  text-align: center;
+  display: inline-block;
+}
+
+.nav-links li a:hover, .nav-links li a.active {
+  background: #ff7043;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.navbar-logout {
+  margin-left: 2.5rem;
+  background: #fff;
+  color: #ff7043;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.08rem;
+  padding: 0.5rem 1.3rem;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, border 0.18s;
+  box-shadow: 0 1px 6px rgba(255,112,67,0.09);
+  min-width: 120px;
+  text-align: center;
+  display: inline-block;
+}
+
+.navbar-logout:hover {
+  background: #ff7043;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+@media (max-width: 1200px) {
+  .navbar-header {
+    padding: 1.2rem 1.5rem;
+  }
+  
+  .search-container {
+    max-width: 300px;
+    margin: 0 0.5rem;
+  }
+  
+  .logo-image {
+    height: 45px;
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar-header {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.2rem 1rem;
+    gap: 1rem;
+  }
+  
+  .logo-container {
+    justify-content: center;
+  }
+  
+  .logo-image {
+    height: 40px;
+  }
+  
+  .search-container {
+    max-width: 100%;
+    margin: 0;
+  }
+  
+  .navbar-nav {
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .nav-links {
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .navbar-logout {
+    margin-left: 1rem;
+    margin-top: 0.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo-image {
+    height: 35px;
+  }
+  
+  .nav-links {
+    gap: 0.8rem;
+  }
+  
+  .nav-links li a {
+    min-width: 100px;
+    font-size: 1rem;
+    padding: 0.25rem 0.6rem;
+  }
+  
+  .navbar-logout {
+    margin-left: 0.5rem;
+    min-width: 100px;
+    font-size: 1rem;
+    padding: 0.4rem 1rem;
+  }
+}
