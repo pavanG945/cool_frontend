@@ -14,7 +14,7 @@ const paymentModes = [
 
 function Payment() {
   const { cartItems, getCartTotal, clearCart } = useCart();
-  const { token, user } = useAuth();
+  const { token } = useAuth();
   const navigate = useNavigate();
 
   const [mode, setMode] = useState('card');
