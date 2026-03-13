@@ -1,6 +1,8 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { useAuth } from './AuthContext';
 
+const BACKEND_URL = process.env.REACT_APP_API_URL || 'https://cool-backend-3hgs.onrender.com';
+
 const CartContext = createContext();
 
 export function useCart() {
@@ -61,7 +63,7 @@ export function CartProvider({ children }) {
     try {
       // Create an axios instance inline, or import axios if necessary. Assuming fetch or you'll need to import axios.
       // Better yet, just use standard fetch since it's simple
-      const response = await fetch(`/api/products/${product._id}/stock`, {
+      const response = await fetch(`${BACKEND_URL}/api/products/${product._id}/stock`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -108,7 +110,7 @@ export function CartProvider({ children }) {
 
     try {
       // Restore stock
-      await fetch(`/api/products/${id}/stock`, {
+      await fetch(`${BACKEND_URL}/api/products/${id}/stock`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -144,7 +146,7 @@ export function CartProvider({ children }) {
       // If newQuantity > oldQuantity, difference is positive, so we want to deplete stock (change = -difference)
       const change = -difference;
       
-      const response = await fetch(`/api/products/${id}/stock`, {
+      const response = await fetch(`${BACKEND_URL}/api/products/${id}/stock`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -178,7 +180,7 @@ export function CartProvider({ children }) {
     // Attempt to restore inventory for all items in the cart
     try {
        await Promise.all(cartItems.map(item => 
-         fetch(`/api/products/${item._id}/stock`, {
+         fetch(`${BACKEND_URL}/api/products/${item._id}/stock`, {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json',
